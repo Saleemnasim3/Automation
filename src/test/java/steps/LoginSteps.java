@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -10,13 +11,13 @@ import java.sql.SQLOutput;
 
 public class LoginSteps {
 
-
-WebDriver driver;
+WebDriver driver = WebDriverManager.chromedriver().create();
+//WebDriver driver;
     @Given("user is on amazon website")
     public void user_is_on_amazon_website() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Saleem\\Desktop\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "C:\\Saleem\\Desktop\\drivers\\chromedriver.exe");
+        //driver = new ChromeDriver();
         driver.navigate().to("http://amazon.com");
     }
 
